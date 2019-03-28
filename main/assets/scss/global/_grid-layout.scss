@@ -38,7 +38,8 @@
 }
 
 // alt approach - max-width is updated at specific breakpoints
-.container--adaptive {
+.container--adaptive,
+.container--adaptive-lg {
   max-width: var(--container-width-xs);
 
   @include breakpoint(md) {
@@ -66,6 +67,19 @@
   }
 }
 
+.container--adaptive-xl {
+  max-width: var(--container-width-xs);
+
+  @include breakpoint(md) {
+    max-width: var(--container-width-md);
+  }
+
+  @include breakpoint(xl) {
+    max-width: var(--container-width-xl);
+  }
+}
+
+
 // --------------------------------
 
 // Alt grid system - based on utility classes
@@ -77,23 +91,14 @@ $grid-columns: 12 !default;
 .grid {
   display: flex;
   flex-wrap: wrap;
-  margin: calc(var(--space-md) * -1) 0 0 calc(var(--space-md) * -1);
 
   >* {
-    padding: var(--space-md) 0 0 var(--space-md);
     background-clip: content-box;
     flex-basis: 100%;
   }
 }
 
-.grid-gap--none {
-  margin: 0;
-
-  >* {
-    padding: 0;
-  }
-}
-
+.grid--gap-xs,
 .grid-gap--xs {
   margin: calc(var(--space-xs) * -1) 0 0 calc(var(--space-xs) * -1);
 
@@ -102,6 +107,7 @@ $grid-columns: 12 !default;
   }
 }
 
+.grid--gap-sm,
 .grid-gap--sm {
   margin: calc(var(--space-sm) * -1) 0 0 calc(var(--space-sm) * -1);
 
@@ -110,6 +116,16 @@ $grid-columns: 12 !default;
   }
 }
 
+.grid--gap-md,
+.grid-gap--md {
+  margin: calc(var(--space-md) * -1) 0 0 calc(var(--space-md) * -1);
+
+  >* {
+    padding: var(--space-md) 0 0 var(--space-md);
+  }
+}
+
+.grid--gap-lg,
 .grid-gap--lg {
   margin: calc(var(--space-lg) * -1) 0 0 calc(var(--space-lg) * -1);
 
@@ -118,6 +134,7 @@ $grid-columns: 12 !default;
   }
 }
 
+.grid--gap-xl,
 .grid-gap--xl {
   margin: calc(var(--space-xl) * -1) 0 0 calc(var(--space-xl) * -1);
 
