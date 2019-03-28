@@ -20,7 +20,8 @@
     "codyhouse"
   ],
   "scripts": {
-    "gulp": "gulp watch",
+    "gulp:s": "gulp sass",
+    "gulp:w": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Amber Creative Lab <info@ambercreative.co>",
